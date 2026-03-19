@@ -5,20 +5,18 @@
             <el-menu-item index="/home">首页</el-menu-item>
             <el-menu-item index="/news">新闻中心</el-menu-item>
             <el-menu-item index="/product">产品与服务</el-menu-item>
-            <el-menu-item index="/" @click="handleClick">登录</el-menu-item>
         </el-menu>
-        <div class="right">门户官网</div>
+        <div class="right">
+            <el-button type="primary" link @click="handleClick">登录</el-button>
+        </div>
     </div>
 </template>
 
 <script setup>
-import { reactive, ref, toRefs } from 'vue'
 import { useRoute } from 'vue-router'
 const route = useRoute()
 
-
 const handleClick = () => {
-    // 函数体
     window.location.href = 'http://localhost:5173/#/login'
 }
 </script>
