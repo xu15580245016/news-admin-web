@@ -8,6 +8,7 @@ const JWT = require('./util/JWT');
 const NewsRouter = require('./routes/admin/NewsRouter');
 const WebNewsRouter = require('./routes/web/NewsRouter');
 const WebProductRouter = require('./routes/web/ProductRouter');
+const WebCommentRouter = require('./routes/web/CommentRouter');
 const ProductRouter = require('./routes/admin/ProductRouter');
 
 var app = express();
@@ -31,6 +32,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 */
 app.use(WebNewsRouter)
 app.use(WebProductRouter)
+app.use(WebCommentRouter)
 app.use((req, res, next) => {
   // 如果token有效，next()
   // 如果token过期了，返回401错误
